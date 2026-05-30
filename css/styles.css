@@ -171,6 +171,20 @@ textarea { width:100%; min-height:120px; padding:0.8rem; border-radius:12px; bor
 .heatmap-grid { display:grid; gap:6px; margin:1rem 0; }
 .heatmap-grid > div { padding:8px; border-radius:6px; color:#001018; text-align:center; font-weight:700 }
 
+/* Layout for index */
+.layout { display:flex; gap:1.25rem; align-items:flex-start }
+.left-panel { width:320px; background:rgba(255,255,255,0.02); border:1px solid var(--border); padding:1rem; border-radius:12px }
+.left-panel h3{ margin:0 0 0.5rem }
+.idea-row { display:flex; align-items:center; gap:0.6rem; padding:0.5rem 0; border-bottom:1px dashed rgba(255,255,255,0.02) }
+.idea-row label{ cursor:pointer }
+
+/* Quick modal */
+.quick-modal { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,12,0.6); z-index:2000 }
+.quick-inner { width:min(840px,96%); background:var(--surface); padding:1.2rem; border-radius:12px; box-shadow:var(--shadow) }
+.quick-inner .close-quick{ float:right; background:transparent; border:none; font-size:1.2rem; color:var(--muted); cursor:pointer }
+.quick-controls{ display:flex; gap:0.6rem; margin-top:1rem; justify-content:flex-end }
+
+
 .note {
   margin: 0.5rem 0 1.5rem;
 }

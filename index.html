@@ -19,7 +19,13 @@
   </header>
 
   <main class="container">
-    <section id="sections" class="section-summary">
+    <div class="layout">
+      <aside class="left-panel">
+        <h3>Ideas</h3>
+        <div id="idea-list"></div>
+        <div style="margin-top:12px"><button id="export-decisions" class="secondary-button">Export decisions (CSV)</button></div>
+      </aside>
+      <section id="sections" class="section-summary">
       <div class="section-header">
         <div>
           <p class="section-label">Dashboard structure</p>
@@ -48,16 +54,16 @@
     <section class="agents-grid">
       <h2>Team snapshot (3×3)</h2>
       <p class="note">Click a name to open a quick agent view.</p>
-      <div class="agent-grid">
-        <button class="agent">Aarav</button>
-        <button class="agent">Neha</button>
-        <button class="agent">Rohan</button>
-        <button class="agent">Priya</button>
-        <button class="agent">Sahil</button>
-        <button class="agent">Tanya</button>
-        <button class="agent">Vikas</button>
-        <button class="agent">Meera</button>
-        <button class="agent">Arjun</button>
+      <div class="agent-grid" id="agent-grid">
+        <button class="agent" data-agent="Aarav">Aarav<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Neha">Neha<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Rohan">Rohan<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Priya">Priya<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Sahil">Sahil<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Tanya">Tanya<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Vikas">Vikas<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Meera">Meera<br/><small class="muted">View ideas</small></button>
+        <button class="agent" data-agent="Arjun">Arjun<br/><small class="muted">View ideas</small></button>
       </div>
     </section>
 

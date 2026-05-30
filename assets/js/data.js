@@ -1,37 +1,58 @@
 const SODATA = {
-  "1-9": {
-    id: "1-9",
-    title: "Monthly Dial → Connect → Prospect Funnel",
-    cadence: "Monthly",
-    complexity: "Low",
-    question: "How many dials turned into connects and prospects each month?",
-    insight: "Three-bar grouped monthly visualization highlights volume vs quality.",
-    action: "Investigate flat connects with dropping prospects or rising prospect rates from better lists.",
-    chart: { type: 'funnel', labels: ["Jan","Feb","Mar","Apr","May"], data: { dials:[1200,1400,1300,1500,1600], connects:[300,320,310,330,360], prospects:[60,70,65,75,90] } }
-  },
-  "1-11": {
-    id: "1-11",
-    title: "Golden Hour Heatmap",
-    cadence: "Weekly",
-    complexity: "Low",
-    question: "Which exact hour and day of the week gets the highest connect rate?",
-    insight: "Hour × weekday colour grid surfaces the highest-performing call windows.",
-    action: "Reserve peak dialing hours and block admin tasks then.",
-    chart: { type: 'heatmap', matrix: [[0.05,0.06,0.04,0.08,0.12,0.10,0.07,0.09,0.06,0.05,0.03,0.02],[0.04,0.05,0.03,0.07,0.11,0.09,0.06,0.08,0.05,0.04,0.02,0.01]] }
-  },
-  "1-13": {
-    id: "1-13",
-    title: "Speed-to-First-Dial Report",
-    cadence: "Daily",
-    complexity: "Medium",
-    question: "How fast does each agent dial a new lead after it arrives?",
-    insight: "Time from lead assignment to first dial, per agent. Leads called within 5 minutes convert dramatically better.",
-    action: "Flag any new lead sitting undialled for 30+ minutes and set a 15-minute standard.",
-    chart: { type: 'bar', labels:['Aarav','Neha','Rohan','Priya','Sahil'], data:[4,12,7,9,20] }
-  }
+  // Section 1
+  "1-9": { id: "1-9", title: "Monthly Dial → Connect → Prospect Funnel", cadence: "Monthly", complexity: "Low", question: "How many dials turned into connects and prospects each month?", insight: "Three-bar grouped monthly visualization highlights volume vs quality.", action: "Investigate flat connects with dropping prospects or rising prospect rates from better lists.", chart: { type: 'funnel', labels: ["Jan","Feb","Mar","Apr","May"], data: { dials:[1200,1400,1300,1500,1600], connects:[300,320,310,330,360], prospects:[60,70,65,75,90] }, img: 'https://source.unsplash.com/collection/190727/800x400' } },
+  "1-11": { id: "1-11", title: "Golden Hour Heatmap", cadence: "Weekly", complexity: "Low", question: "Which exact hour and day of the week gets the highest connect rate?", insight: "Hour × weekday colour grid surfaces the highest-performing call windows.", action: "Reserve peak dialing hours and block admin tasks then.", chart: { type: 'heatmap', matrix: [[0.05,0.06,0.04,0.08,0.12,0.10,0.07,0.09,0.06,0.05,0.03,0.02],[0.04,0.05,0.03,0.07,0.11,0.09,0.06,0.08,0.05,0.04,0.02,0.01]], img: 'https://source.unsplash.com/collection/190727/801x401' } },
+  "1-12": { id: "1-12", title: "Number List Decay Chart", cadence: "Weekly", complexity: "Low", question: "Is our current lead batch getting stale? When does it stop working?", insight: "Week-on-week junk% and unanswered% per batch show list decay.", action: "Retire batches crossing 40% junk by week three.", chart:{ type:'line', labels:['W1','W2','W3','W4'], data:[10,22,41,55], img:'https://source.unsplash.com/collection/190727/802x402'} },
+  "1-13": { id: "1-13", title: "Speed-to-First-Dial Report", cadence: "Daily", complexity: "Medium", question: "How fast does each agent dial a new lead after it arrives?", insight: "Time from lead assignment to first dial, per agent.", action: "Flag leads undialled for 30+ minutes and set 15-minute standard.", chart: { type: 'bar', labels:['Aarav','Neha','Rohan','Priya','Sahil'], data:[4,12,7,9,20], img:'https://source.unsplash.com/collection/190727/803x403' } },
+  "1-14": { id: "1-14", title: "First Call vs Repeat Attempt Connect Rate", cadence: "Monthly", complexity: "Low", question: "Do we connect better on call 1 or call 4 to the same number?", insight: "Connect rate by attempt identifies when to stop dialing.", action: "Set a data-driven maximum attempt policy.", chart:{ type:'line', labels:[1,2,3,4,5], data:[25,18,12,6,4], img:'https://source.unsplash.com/collection/190727/804x404'} },
+  "1-15": { id: "1-15", title: "Live Daily Target Progress", cadence: "Daily", complexity: "Medium", question: "By 2 PM today, is each agent on pace to hit their dial target?", insight: "Real-time progress per agent with projected EOD.", action: "Flag agents below 40% by midday.", chart:{ type:'doughnut', labels:['On pace','Behind'], data:[62,38], img:'https://source.unsplash.com/collection/190727/805x405'} },
+  "1-16": { id: "1-16", title: "Day-of-Week Performance Trend", cadence: "Monthly", complexity: "Low", question: "Is the team consistently weaker on certain days of the week?", insight: "Average dials and connect rate by weekday.", action: "Plan incentives and coaching.", chart:{ type:'bar', labels:['Mon','Tue','Wed','Thu','Fri'], data:[320,360,340,330,290], img:'https://source.unsplash.com/collection/190727/806x406'} },
+  "1-17": { id: "1-17", title: "Redial Gap Tracker", cadence: "Weekly", complexity: "Low", question: "Are agents redialling too quickly or waiting too long?", insight: "Average time between attempts per agent.", action: "Set a minimum 4-hour redial gap.", chart:{ type:'bar', labels:['Aarav','Neha','Rohan','Priya'], data:[180,240,60,300], img:'https://source.unsplash.com/collection/190727/807x407'} },
+  "1-18": { id: "1-18", title: "City × Time-of-Day Win Map", cadence: "Monthly", complexity: "Medium", question: "Does Pune pick up at 11 AM but Mumbai at 6 PM?", insight: "City × hour connect rate heatmap.", action: "Create city-specific calling windows.", chart:{ type:'heatmap', matrix:[[0.02,0.04,0.08,0.12],[0.03,0.05,0.07,0.1]], img:'https://source.unsplash.com/collection/190727/808x408'} },
+  "1-19": { id: "1-19", title: "Agent Effort Breakdown Donut", cadence: "Weekly", complexity: "Low", question: "Where is each agent spending their dials?", insight: "% of dials by disposition bucket per agent.", action: "Fix data before coaching.", chart:{ type:'doughnut', labels:['Prospect','Unknown','Junk'], data:[40,35,25], img:'https://source.unsplash.com/collection/190727/809x409'} },
+
+  // Section 2
+  "2-8": { id:'2-8', title:'Monthly Pipeline Waterfall', cadence:'Monthly', complexity:'Low', question:'Each month: how many prospects became meetings planned and done?', insight:'Prospects→Meet Planned→Meet Done waterfall.', action:'Address weak conversion from interest to meetings.', chart:{ type:'funnel', labels:['Jan','Feb','Mar'], data:{prospects:[80,90,120], planned:[60,70,85], done:[45,50,65]}, img:'https://source.unsplash.com/collection/190727/810x410'} },
+  "2-10": { id:'2-10', title:'Prospect to Meeting Funnel per Agent', cadence:'Weekly', complexity:'Low', question:'Which agent converts prospects to meetings consistently?', insight:'Per-agent funnel and drop-off.', action:'Pair prospectors with closers.', chart:{ type:'bar', labels:['Aarav','Neha','Rohan'], data:[30,45,20], img:'https://source.unsplash.com/collection/190727/811x411'} },
+  "2-11": { id:'2-11', title:'Sleeping Prospects Alert', cadence:'Weekly', complexity:'Low', question:'Which warm prospects have not been contacted in 7+ days?', insight:'List sorted by days since last touch.', action:'Contact or reassign sleeping prospects every Monday.', chart:{ type:'bar', labels:['7d','8d','9d'], data:[12,8,5], img:'https://source.unsplash.com/collection/190727/812x412'} },
+  "2-12": { id:'2-12', title:'Prospect Velocity Chart', cadence:'Monthly', complexity:'Low', question:'How many days and calls to turn a number into a Prospect?', insight:'Avg days and dials per agent.', action:'Set benchmark: 3 calls or 5 days.', chart:{ type:'bar', labels:['Aarav','Neha','Rohan'], data:[3,4,2], img:'https://source.unsplash.com/collection/190727/813x413'} },
+  "2-13": { id:'2-13', title:'Recalling Age Dashboard', cadence:'Daily', complexity:'Low', question:'Which callback promises are silently going cold today?', insight:'Recalling sorted by age; day 3 danger.', action:'Escalate recalls older than 3 days.', chart:{ type:'bar', labels:['Day1','Day2','Day3+'], data:[40,25,10], img:'https://source.unsplash.com/collection/190727/814x414'} },
+  "2-14": { id:'2-14', title:'Agent Conversion Leaderboard', cadence:'Monthly', complexity:'Low', question:'Who converts most dials into prospects?', insight:'Dials-to-Prospect ratio ranked by agent.', action:'Recognize top converters.', chart:{ type:'bar', labels:['Aarav','Neha','Priya'], data:[8,12,5], img:'https://source.unsplash.com/collection/190727/815x415'} },
+  "2-15": { id:'2-15', title:'City Conversion Heatmap', cadence:'Monthly', complexity:'Low', question:'Which cities produce real buyers?', insight:'City rows × disposition columns heatmap.', action:'Shift effort to high-performing cities.', chart:{ type:'heatmap', matrix:[[0.2,0.1,0.05],[0.08,0.12,0.02]], img:'https://source.unsplash.com/collection/190727/816x416'} },
+  "2-16": { id:'2-16', title:'Junk vs Prospect Weekly Ratio', cadence:'Weekly', complexity:'Low', question:'Is number quality improving or degrading?', insight:'Dual line chart: prospects vs junk per week.', action:'Act after two consecutive weeks of rising junk.', chart:{ type:'line', labels:['W1','W2','W3'], data:[10,12,20], img:'https://source.unsplash.com/collection/190727/817x417'} },
+  "2-17": { id:'2-17', title:'Meeting Show-Up Rate by Day of Week', cadence:'Monthly', complexity:'Low', question:'Are Monday meetings more reliable than Friday?', insight:'Meet Done / Meet Planned per weekday.', action:'Avoid high no-show days.', chart:{ type:'bar', labels:['Mon','Tue','Wed','Thu','Fri'], data:[0.95,0.92,0.9,0.88,0.7], img:'https://source.unsplash.com/collection/190727/818x418'} },
+  "2-18": { id:'2-18', title:'Prospect Concentration Risk', cadence:'Monthly', complexity:'Low', question:'Is one agent holding too many active prospects?', insight:'% of total prospects by agent.', action:'Redistribute if >30%.', chart:{ type:'doughnut', labels:['Aarav','Neha','Others'], data:[28,22,50], img:'https://source.unsplash.com/collection/190727/819x419'} },
+
+  // Section 3
+  "3-6": { id:'3-6', title:'Monthly Full-Journey Funnel', cadence:'Monthly', complexity:'Medium', question:'From dials to deals: how does the funnel look each month?', insight:'Five-step journey highlights leakage points.', action:'Review if deals lag prospects.', chart:{ type:'funnel', labels:['Jan','Feb','Mar'], data:{ dials:[2000,2200,2100], connects:[500,520,480], prospects:[120,140,135], meetdone:[80,90,100], dealwon:[12,14,11] }, img:'https://source.unsplash.com/collection/190727/820x420'} },
+  "3-8": { id:'3-8', title:'Calls Before First Meeting Histogram', cadence:'Monthly', complexity:'Medium', question:'Do meetings typically happen after 4 or 10 dials?', insight:'Histogram of dials before first Meet Done.', action:'Reassign leads after unlikely zone.', chart:{ type:'bar', labels:[1,2,3,4,5,6,7], data:[5,15,30,25,10,8,2], img:'https://source.unsplash.com/collection/190727/821x421'} },
+  "3-9": { id:'3-9', title:'Time-to-Close Funnel by Agent', cadence:'Monthly', complexity:'Medium', question:'Which agent closes fastest?', insight:'Average days first dial→deal per agent.', action:'Pair fast closers with slow ones.', chart:{ type:'bar', labels:['Aarav','Neha','Rohan'], data:[12,8,25], img:'https://source.unsplash.com/collection/190727/822x422'} },
+  "3-10": { id:'3-10', title:'No-Show Rate by City', cadence:'Monthly', complexity:'Medium', question:'Which cities schedule unreliable meetings?', insight:'City-level no-show rates.', action:'Adjust meeting types by city.', chart:{ type:'bar', labels:['Pune','Mumbai','Bengaluru'], data:[0.2,0.35,0.28], img:'https://source.unsplash.com/collection/190727/823x423'} },
+  "3-11": { id:'3-11', title:'Post-Meeting Follow-Up Score', cadence:'Weekly', complexity:'Medium', question:'How fast and consistently does each agent follow up after meetings?', insight:'Count of dials within 48 hours of Meet Done.', action:'Require 24-hour follow-up.', chart:{ type:'bar', labels:['Aarav','Neha','Priya'], data:[60,80,40], img:'https://source.unsplash.com/collection/190727/824x424'} },
+  "3-12": { id:'3-12', title:'Lead Cohort Conversion', cadence:'Monthly', complexity:'Medium', question:'Do leads from month 1 convert better than month 3?', insight:'Cohort tracking over 60 days.', action:'Focus fresh leads in best windows.', chart:{ type:'line', labels:['0-15d','16-30d','31-60d'], data:[10,7,3], img:'https://source.unsplash.com/collection/190727/825x425'} },
+  "3-13": { id:'3-13', title:'WhatsApp vs Call Conversion for Recalling', cadence:'Monthly', complexity:'Medium', question:'For callback contacts, does WhatsApp or call convert better?', insight:'Compare Meet Done rates by channel.', action:'Default to better-performing channel after 48 hours.', chart:{ type:'bar', labels:['WhatsApp','Call'], data:[12,6], img:'https://source.unsplash.com/collection/190727/826x426'} },
+  "3-14": { id:'3-14', title:'Pipeline Health Score', cadence:'Weekly', complexity:'High', question:'Is next month likely to be better or worse in a single number?', insight:'Weekly score combining prospects, meet-done, stuck prospects, tag gap.', action:'Show weekly in standup.', chart:{ type:'bar', labels:['Score'], data:[72], img:'https://source.unsplash.com/collection/190727/827x427'} },
+  "3-15": { id:'3-15', title:'Effort vs Result by Agent', cadence:'Monthly', complexity:'Low', question:'Who expends high effort for low results?', insight:'Total dials vs meetings/deals per agent.', action:'Reallocate leads for coaching.', chart:{ type:'scatter', labels:[], data:[/* scatter handled differently */], img:'https://source.unsplash.com/collection/190727/828x428'} }
 };
 
 // Order of IDs for navigation
-const SODATA_ORDER = ["1-9","1-11","1-13"];
+const SODATA_ORDER = [
+  "1-9","1-11","1-12","1-13","1-14","1-15","1-16","1-17","1-18","1-19",
+  "2-8","2-10","2-11","2-12","2-13","2-14","2-15","2-16","2-17","2-18",
+  "3-6","3-8","3-9","3-10","3-11","3-12","3-13","3-14","3-15"
+];
 
-export { SODATA, SODATA_ORDER };
+// Simple agent → idea mapping (can be edited)
+const AGENT_MAP = {
+  'Aarav': ['1-9','1-13','2-10','3-9'],
+  'Neha': ['1-11','1-15','2-14','3-11'],
+  'Rohan': ['1-12','1-14','2-12','3-8'],
+  'Priya': ['1-16','1-19','2-11','3-12'],
+  'Sahil': ['1-17','1-18','2-15','3-10'],
+  'Tanya': ['2-8','2-13','3-6'],
+  'Vikas': ['1-15','2-16','3-14'],
+  'Meera': ['2-17','2-18','3-13'],
+  'Arjun': ['1-9','1-11','3-15']
+};
+
+export { SODATA, SODATA_ORDER, AGENT_MAP };

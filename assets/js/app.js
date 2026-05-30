@@ -1,4 +1,4 @@
-import { SODATA, SODATA_ORDER } from './data.js';
+import { SODATA, SODATA_ORDER, AGENT_MAP } from './data.js';
 
 function qsParam(name){
   const params = new URLSearchParams(location.search);
@@ -66,7 +66,14 @@ function renderChartArea(root, data){
       options:{ responsive:true }
     });
   } else if(data.chart.type === 'bar'){
-    new Chart(ctx, { type: 'bar', data:{ labels:data.chart.labels, datasets:[{label:'Minutes to first dial', data:data.chart.data, backgroundColor:'#ffb86b'}]}, options:{responsive:true} });
+    new Chart(ctx, { type: 'bar', data:{ labels:data.chart.labels, datasets:[{label:data.title || 'Value', data:data.chart.data, backgroundColor:'#ffb86b'}]}, options:{responsive:true} });
+  } else if(data.chart.type === 'doughnut' || data.chart.type === 'pie'){
+    new Chart(ctx, { type: data.chart.type, data:{ labels:data.chart.labels, datasets:[{data:data.chart.data, backgroundColor:['#60d0ff','#10b0ff','#00c46b','#ffb86b']} ]}, options:{responsive:true} });
+  } else if(data.chart.type === 'line'){
+    new Chart(ctx, { type: 'line', data:{ labels:data.chart.labels, datasets:[{label:data.title || 'Trend', data:data.chart.data, borderColor:'#60d0ff', backgroundColor:'rgba(96,208,255,0.12)'}]}, options:{responsive:true} });
+  } else if(data.chart.type === 'scatter'){
+    // simple scatter: expects data.chart.points = [{x:..., y:...}, ...]
+    new Chart(ctx, { type: 'scatter', data:{ datasets:[{label:data.title||'Effort vs Result', data:data.chart.points || [], backgroundColor:'#10b0ff'}]}, options:{responsive:true, scales:{x:{title:{display:true,text:'Effort'}}, y:{title:{display:true,text:'Result'}}}});
   } else if(data.chart.type === 'heatmap'){
     // simple css-based heatmap fallback
     const heat = document.createElement('div');
@@ -146,9 +153,18 @@ function renderSidebar(){
 
 // QuickView modal
 let quickIndex = 0; let quickList = [];
-function openQuickView(startIndex=0){
-  quickList = SODATA_ORDER.filter(id=> getSelectedMap()[id]);
-  if(quickList.length===0) quickList = SODATA_ORDER.slice();
+function openQuickView(startIndex=0, agentName=null){
+  const sel = getSelectedMap();
+  if(agentName && AGENT_MAP[agentName]){
+    // start with agent-specific ideas
+    quickList = AGENT_MAP[agentName].slice();
+    // if user has selected filter, intersect
+    const selKeys = Object.keys(sel);
+    if(selKeys.length>0){ quickList = quickList.filter(id=>sel[id]); }
+  } else {
+    quickList = SODATA_ORDER.filter(id=> sel[id]);
+  }
+  if(!quickList || quickList.length===0) quickList = SODATA_ORDER.slice();
   quickIndex = startIndex%quickList.length;
   showQuick(quickList[quickIndex]);
 }
@@ -184,7 +200,7 @@ function initIndex(){
   renderSidebar();
   const exp = document.getElementById('export-decisions'); if(exp) exp.addEventListener('click', exportDecisionsCSV);
   document.querySelectorAll('#agent-grid .agent').forEach(btn=>{
-    btn.addEventListener('click', ()=>{ openQuickView(0); });
+    btn.addEventListener('click', ()=>{ const a = btn.dataset.agent || null; openQuickView(0, a); });
   });
 }
 

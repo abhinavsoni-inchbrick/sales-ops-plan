@@ -3,111 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sales Ops Dashboard Plan</title>
+  <title>Sales Ops Dashboard — Review & Decision Session</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <header class="hero">
+<body data-page="index">
+  <header class="hero hero-meeting">
+    <div class="hero-bg-orbs" aria-hidden="true"></div>
     <div class="container hero-content">
-      <div>
-        <p class="eyebrow">Inchbrick Sales Team</p>
-        <h1>Sales Ops Dashboard Plan</h1>
-        <p class="hero-copy">A meeting-ready static site for chart review, decisions, and roadmap clarity. Every section opens into its own detailed page with a polished UI/UX.</p>
+      <div class="hero-text">
+        <p class="eyebrow">Inchbrick Sales Team · Monthly View</p>
+        <h1>Sales Ops Dashboard<br /><span class="gradient-text">Review & Decision Session</span></h1>
+        <p class="hero-copy">Each card gets a decision: <strong>Build It</strong> · <strong>Next Phase</strong> · <strong>Skip</strong> · <strong>Needs Discussion</strong>. Decisions save in your browser and sync across every page.</p>
+        <div class="legend-row">
+          <span class="legend-item low">🔧 Low — existing data</span>
+          <span class="legend-item medium">🔧 Medium — small ticket</span>
+          <span class="legend-item high">🔧 High — new integration</span>
+        </div>
+        <div id="hero-counts" class="hero-counts"></div>
       </div>
-      <a class="primary-button" href="#sections">Start review</a>
+      <div class="hero-actions">
+        <a class="primary-button" id="start-presentation" href="#">Start presentation →</a>
+        <a class="secondary-button" href="#decision-tracker">Jump to tracker</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="layout">
-      <aside class="left-panel">
-        <h3>Ideas</h3>
-        <div id="idea-list"></div>
-        <div style="margin-top:12px"><button id="export-decisions" class="secondary-button">Export decisions (CSV)</button></div>
-      </aside>
-      <section id="sections" class="section-summary">
+    <section class="section-summary">
       <div class="section-header">
         <div>
           <p class="section-label">Dashboard structure</p>
-          <h2>Sections and priorities</h2>
+          <h2>Three sections — pick where to begin</h2>
         </div>
       </div>
-
-      <div class="grid-3">
-        <article class="summary-card">
-          <h3>Section 1</h3>
-          <p>Dialled Calls — existing data, fast build. Review hourly, geographic, agent, and quality metrics.</p>
+      <div class="grid-3 section-cards">
+        <article class="summary-card s1-card">
+          <span class="card-icon">📞</span>
+          <h3>1. Dialled Calls</h3>
+          <p>Volume, timing, reach — is the team dialling smart or just dialling a lot?</p>
           <a href="section1.html" class="secondary-button">Open Section 1</a>
         </article>
-        <article class="summary-card">
-          <h3>Section 2</h3>
-          <p>Interested Clients — existing disposition data with prospect, meeting, and conversion insights.</p>
+        <article class="summary-card s2-card">
+          <span class="card-icon">🔥</span>
+          <h3>2. Interested Clients</h3>
+          <p>Who is warm, progressing, or going cold silently after first contact.</p>
           <a href="section2.html" class="secondary-button">Open Section 2</a>
         </article>
-        <article class="summary-card">
-          <h3>Section 3</h3>
-          <p>Deal Pipeline — blocked or derivable charts. Build only after Section 1 and 2 are clean.</p>
+        <article class="summary-card s3-card">
+          <span class="card-icon">🏁</span>
+          <h3>3. Deal Pipeline</h3>
+          <p>After the meeting — build only when Sections 1–2 tag gap is near zero.</p>
           <a href="section3.html" class="secondary-button">Open Section 3</a>
         </article>
       </div>
     </section>
-    <section class="agents-grid">
-      <h2>Team snapshot (3×3)</h2>
-      <p class="note">Click a name to open a quick agent view.</p>
-      <div class="agent-grid" id="agent-grid">
-        <button class="agent" data-agent="Aarav">Aarav<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Neha">Neha<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Rohan">Rohan<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Priya">Priya<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Sahil">Sahil<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Tanya">Tanya<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Vikas">Vikas<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Meera">Meera<br/><small class="muted">View ideas</small></button>
-        <button class="agent" data-agent="Arjun">Arjun<br/><small class="muted">View ideas</small></button>
+
+    <section class="tiles-section s1">
+      <div class="section-header">
+        <p class="section-label">Section 1 · New ideas</p>
+        <h2>Dialled Calls — decide what to build</h2>
+        <p class="note">3×3 grid — click any card to open its own review page with chart preview & next navigation.</p>
       </div>
+      <div id="grid-section-1" class="grid-3x3"></div>
+      <a href="section1.html" class="section-link">View all Section 1 charts (live + new) →</a>
     </section>
 
-    <section class="cards-grid">
-      <h2>Quick links</h2>
-      <div class="grid-4">
-        <a class="card-link" href="section1.html">
-          <strong>Section 1</strong>
-          <span>Dialled Calls</span>
-        </a>
-        <a class="card-link" href="section2.html">
-          <strong>Section 2</strong>
-          <span>Interested Clients</span>
-        </a>
-        <a class="card-link" href="section3.html">
-          <strong>Section 3</strong>
-          <span>Deal Pipeline</span>
-        </a>
-        <a class="card-link" href="#decision-tracker">
-          <strong>Decision Tracker</strong>
-          <span>Meeting choices</span>
-        </a>
+    <section class="tiles-section s2">
+      <div class="section-header">
+        <p class="section-label">Section 2 · New ideas</p>
+        <h2>Interested Clients — decide what to build</h2>
       </div>
+      <div id="grid-section-2" class="grid-3x3"></div>
+      <a href="section2.html" class="section-link">View all Section 2 charts →</a>
     </section>
 
-    <section class="section-details">
-      <h2>New ideas — Open detail</h2>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>1.9 Monthly Dial → Connect → Prospect</h3>
-          <p>Open interactive detail and mark a decision.</p>
-          <a class="secondary-button" href="detail.html?id=1-9">Open detail</a>
-        </article>
-        <article class="chart-card">
-          <h3>1.11 Golden Hour Heatmap</h3>
-          <p>See the heatmap and save meeting notes locally.</p>
-          <a class="secondary-button" href="detail.html?id=1-11">Open detail</a>
-        </article>
-        <article class="chart-card">
-          <h3>1.13 Speed-to-First-Dial</h3>
-          <p>Agent first-dial times and owner actions.</p>
-          <a class="secondary-button" href="detail.html?id=1-13">Open detail</a>
-        </article>
+    <section class="tiles-section s3">
+      <div class="section-header">
+        <p class="section-label">Section 3 · New ideas</p>
+        <h2>Deal Pipeline — leadership charts</h2>
+        <p class="note warn">Do not build Section 3 until Tag Gap in Sections 1–2 is near zero.</p>
       </div>
+      <div id="grid-section-3" class="grid-3x3"></div>
+      <a href="section3.html" class="section-link">View all Section 3 charts →</a>
     </section>
 
     <section id="decision-tracker" class="decision-section">
@@ -115,85 +95,21 @@
         <div>
           <p class="section-label">Meeting worksheet</p>
           <h2>Decision tracker</h2>
+          <p class="note">Tick decisions here or on each chart page — everything syncs via localStorage. Take a screenshot at the end.</p>
         </div>
       </div>
-      <p class="note">Use this table during the meeting to capture Build It / Next Phase / Skip / Needs Discussion decisions for each new idea.</p>
-      <div class="decision-grid">
-        <div class="decision-cell"><strong>New idea</strong></div>
-        <div class="decision-cell"><strong>Build It</strong></div>
-        <div class="decision-cell"><strong>Next Phase</strong></div>
-        <div class="decision-cell"><strong>Skip</strong></div>
-        <div class="decision-cell"><strong>Note</strong></div>
-
-        <div class="decision-cell">1.9 Monthly Dial → Connect → Prospect</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.11 Golden Hour Heatmap</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.12 Number List Decay Chart</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.13 Speed-to-First-Dial Report</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.14 First Call vs Repeat Attempt</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.15 Live Daily Target Progress</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.16 Day-of-Week Performance Trend</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.17 Redial Gap Tracker</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.18 City × Time-of-Day Win Map</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-
-        <div class="decision-cell">1.19 Agent Effort Breakdown Donut</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell">☐</div>
-        <div class="decision-cell"></div>
-      </div>
+      <div id="decision-tracker-root"></div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>Static site ready for GitHub Pages. Copy files to a repo and publish from the root branch.</p>
+      <p>Build It = engineering backlog this week · Next Phase = after Sections 1–2 are clean · Skip = not needed</p>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="assets/js/app.js"></script>
+
+  <script src="js/data.js"></script>
+  <script src="js/decisions.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -4,123 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Section 3 — Deal Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <header class="page-header">
+<body data-page="section" data-section="3" class="s3">
+  <header class="page-header section-hero s3">
     <div class="container header-row">
       <div>
         <p class="eyebrow">Section 3</p>
-        <h1>Deal Pipeline</h1>
-        <p>Charts that are currently blocked or derivable. Build only after Section 1 and 2 reach data cleanliness.</p>
+        <h1>🏁 Deal Pipeline</h1>
+        <p>Build only after Tag Gap in Sections 1–2 is near zero. Wrong data = false confidence.</p>
       </div>
-      <a class="secondary-button" href="index.html">Back to overview</a>
+      <div class="header-actions">
+        <a class="secondary-button" href="index.html">← Overview</a>
+        <a class="primary-button" href="chart.html?id=3.6">Start new ideas →</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="section-details">
-      <h2>Status</h2>
-      <p class="note">Section 3 is currently blocked or derivable. Do not build these charts until Tag Gap in Sections 1 and 2 is near zero.</p>
-      <div class="chart-list">
-        <article class="chart-card blocked">
-          <h3>3.1 Meeting Status (attended/no-show)</h3>
-          <p>BLOCKED — needs calendar integration.</p>
-        </article>
-        <article class="chart-card derivable">
-          <h3>3.2 Calls Before First Meeting</h3>
-          <p>DERIVABLE — count dials before first Meet Done date.</p>
-        </article>
-        <article class="chart-card derivable">
-          <h3>3.3 Follow-ups After Meeting</h3>
-          <p>DERIVABLE — count dials after first Meet Done on same phone.</p>
-        </article>
-        <article class="chart-card blocked">
-          <h3>3.4 Deal Won / Booking</h3>
-          <p>BLOCKED — Lead table not yet wired to Sales Ops view.</p>
-        </article>
-        <article class="chart-card blocked">
-          <h3>3.5 Revenue & Closure Rate</h3>
-          <p>BLOCKED — no deal amount field in current system.</p>
-        </article>
-      </div>
+    <section class="tiles-section">
+      <h2>Blocked or derivable</h2>
+      <p class="note warn">⚠️ Do not build these until Sections 1–2 tag gap is near zero.</p>
+      <div id="grid-blocked" class="grid-3x3"></div>
     </section>
 
-    <section class="section-details">
-      <h2>New ideas</h2>
-      <p class="note">These charts justify the leadership dashboard once Sections 1 and 2 are clean.</p>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>3.6 Monthly Full-Journey Funnel</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> How many dials became prospects, meetings, and deals each month?</p>
-          <p><strong>Insight:</strong> Five-step monthly journey highlights where value leaks.</p>
-          <p><strong>Manager action:</strong> Review monthly if deals lag prospects.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.8 Calls Before First Meeting Histogram</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Do meetings typically happen after 4 or 10 dials?</p>
-          <p><strong>Insight:</strong> Histogram surfaces the dial count pattern before first Meet Done.</p>
-          <p><strong>Manager action:</strong> Reassign leads after the statistically unlikely zone.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.9 Time-to-Close Funnel by Agent</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Which agents close fastest from first dial to deal?</p>
-          <p><strong>Insight:</strong> Average timelines identify fast closers and coaching targets.</p>
-          <p><strong>Manager action:</strong> Pair slow agents with fast closers.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.10 No-Show Rate by City</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Which cities schedule the least reliable meetings?</p>
-          <p><strong>Insight:</strong> City-level no-show rates highlight booking risk.</p>
-          <p><strong>Manager action:</strong> Adjust meeting type or timing by city.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.11 Post-Meeting Follow-Up Score</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> How quickly does each agent follow up after a meeting?</p>
-          <p><strong>Insight:</strong> 48-hour follow-up behavior correlates with deal success.</p>
-          <p><strong>Manager action:</strong> Require follow-up within 24 hours of Meet Done.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.12 Lead Cohort Conversion</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Do earlier cohorts convert better than later ones?</p>
-          <p><strong>Insight:</strong> Cohort performance over 60 days reveals lead freshness value.</p>
-          <p><strong>Manager action:</strong> Focus fresh leads on the strongest conversion windows.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.13 WhatsApp vs Call — Which Converts Better for Recalling?</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Does WhatsApp or call work better for callback contacts?</p>
-          <p><strong>Insight:</strong> Compare Meet Done rates for callback channels.</p>
-          <p><strong>Manager action:</strong> Default to the better-performing channel after 48 hours.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.14 Pipeline Health Score</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> High</p>
-          <p><strong>Question:</strong> Is next month’s pipeline healthy in one number?</p>
-          <p><strong>Insight:</strong> Score incorporates prospects, meetings, stuck prospects, and tag gap.</p>
-          <p><strong>Manager action:</strong> Use this weekly score to decide push vs quality improvements.</p>
-        </article>
-        <article class="chart-card">
-          <h3>3.15 Effort vs Result by Agent</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Who spends more effort for less result?</p>
-          <p><strong>Insight:</strong> Compare dials against meetings and deals per agent.</p>
-          <p><strong>Manager action:</strong> Reallocate leads from low-result agents to coaching.</p>
-        </article>
-      </div>
+    <section class="tiles-section">
+      <h2>New ideas — leadership charts</h2>
+      <div id="grid-new" class="grid-3x3"></div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p><a href="index.html">Back to overview</a></p>
+      <p><a href="section2.html">← Section 2</a> · <a href="index.html">Overview</a></p>
     </div>
   </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/decisions.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

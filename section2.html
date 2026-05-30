@@ -4,138 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Section 2 — Interested Clients</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <header class="page-header">
+<body data-page="section" data-section="2" class="s2">
+  <header class="page-header section-hero s2">
     <div class="container header-row">
       <div>
         <p class="eyebrow">Section 2</p>
-        <h1>Interested Clients</h1>
-        <p>Charts built from disposition, contactDepth, and SalesAgentDaySnapshot data for prospect movement and conversion.</p>
+        <h1>🔥 Interested Clients</h1>
+        <p>Disposition data, contactDepth, and SalesAgentDaySnapshot — zero new integrations.</p>
       </div>
-      <a class="secondary-button" href="index.html">Back to overview</a>
+      <div class="header-actions">
+        <a class="secondary-button" href="index.html">← Overview</a>
+        <a class="primary-button" href="chart.html?id=2.8">Start new ideas →</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="section-details">
+    <section class="tiles-section">
       <h2>Already live</h2>
-      <p class="note">Live metrics for junk rate, callbacks, prospects, meetings, and tag completeness.</p>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>2.1 Junk Lead Rate</h3>
-          <p>% not-interested after talking, broken down by agent and range.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.2 Recalling (Callback Pool)</h3>
-          <p>Contacts that requested a callback, shown as a callback pool.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.3 Prospect Count</h3>
-          <p>Weekly new prospects and quality leaders in one chart.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.4 Google Meet Planned</h3>
-          <p>Confirmed scheduled meeting count shown as a KPI metric.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.5 Google Meet Done</h3>
-          <p>Confirmed completed meetings count.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.6 Stuck Prospects</h3>
-          <p>Contacts with 5+ calls still tagged Prospect and no meeting yet.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.7 Tag Gap Audit</h3>
-          <p>Connected calls with no CRM tag. Critical for data accuracy.</p>
-        </article>
-      </div>
+      <div id="grid-live" class="grid-3x3"></div>
     </section>
 
-    <section class="section-details">
-      <h2>New ideas</h2>
-      <p class="note">These ideas can be built from current disposition and snapshot data with no new integrations.</p>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>2.8 Monthly Pipeline Waterfall</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> How many prospects became meetings planned and done each month?</p>
-          <p><strong>Insight:</strong> Funnel-style monthly waterfall reveals drop-off from Prospect to Meet Done.</p>
-          <p><strong>Manager action:</strong> Address weak conversion from interest to scheduled meetings.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.10 Prospect to Meeting Funnel per Agent</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Who converts prospects to meetings consistently?</p>
-          <p><strong>Insight:</strong> Agent-level funnel with drop-off percentages identifies coaching opportunities.</p>
-          <p><strong>Manager action:</strong> Pair strong prospectors with strong closers.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.11 Sleeping Prospects Alert</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Which prospects have not been touched for 7+ days?</p>
-          <p><strong>Insight:</strong> List of stale prospects sorted by days since last touch.</p>
-          <p><strong>Manager action:</strong> Contact or reassign sleeping prospects every Monday.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.12 Prospect Velocity Chart</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> How many days and calls to turn a number into a Prospect?</p>
-          <p><strong>Insight:</strong> Fast converters use fewer calls and fewer days.</p>
-          <p><strong>Manager action:</strong> Set a benchmark of 3 calls or 5 days.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.13 Recalling Age Dashboard</h3>
-          <p><strong>Cadence:</strong> Daily · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Which callback promises are going cold today?</p>
-          <p><strong>Insight:</strong> Sorted Recalling contacts by age, with day 3 as the danger zone.</p>
-          <p><strong>Manager action:</strong> Escalate recalls older than 3 days.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.14 Agent Conversion Leaderboard</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Who converts dials into prospects the best?</p>
-          <p><strong>Insight:</strong> Dials-to-Prospect ratio ranks agents by efficiency not volume.</p>
-          <p><strong>Manager action:</strong> Reward top converters publicly.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.15 City Conversion Heatmap</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Which cities deliver prospects and which waste effort?</p>
-          <p><strong>Insight:</strong> City vs disposition heatmap makes geographic performance instantly visible.</p>
-          <p><strong>Manager action:</strong> Shift effort toward high-performing cities.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.16 Junk vs Prospect Weekly Ratio</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Is number quality improving or degrading?</p>
-          <p><strong>Insight:</strong> Weekly lines for prospects vs junk identify quality trends.</p>
-          <p><strong>Manager action:</strong> Act after two consecutive weeks of rising junk.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.17 Meeting Show-Up Rate by Day of Week</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Which meeting days are most reliable?</p>
-          <p><strong>Insight:</strong> Show-up rate per weekday reveals scheduling weaknesses.</p>
-          <p><strong>Manager action:</strong> Avoid high no-show days and centralize meeting slots.</p>
-        </article>
-        <article class="chart-card">
-          <h3>2.18 Prospect Concentration Risk</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Is one agent holding too many active prospects?</p>
-          <p><strong>Insight:</strong> Agent prospect share shows concentration risk in the funnel.</p>
-          <p><strong>Manager action:</strong> Redistribute prospects if any agent holds over 30%.</p>
-        </article>
-      </div>
+    <section class="tiles-section">
+      <h2>New ideas — meeting decisions</h2>
+      <div id="grid-new" class="grid-3x3"></div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p><a href="index.html">Back to overview</a></p>
+      <p><a href="section1.html">← Section 1</a> · <a href="index.html">Overview</a> · <a href="section3.html">Section 3 →</a></p>
     </div>
   </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/decisions.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

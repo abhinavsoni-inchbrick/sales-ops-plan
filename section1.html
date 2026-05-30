@@ -4,142 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Section 1 — Dialled Calls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <header class="page-header">
+<body data-page="section" data-section="1" class="s1">
+  <header class="page-header section-hero s1">
     <div class="container header-row">
       <div>
         <p class="eyebrow">Section 1</p>
-        <h1>Dialled Calls</h1>
-        <p>Review every chart in Section 1: volume, timing, reach, connect quality, and agent comparisons.</p>
+        <h1>📞 Dialled Calls</h1>
+        <p>Volume, timing, reach — is the team dialling smart or just dialling a lot?</p>
       </div>
-      <a class="secondary-button" href="index.html">Back to overview</a>
+      <div class="header-actions">
+        <a class="secondary-button" href="index.html">← Overview</a>
+        <a class="primary-button" href="chart.html?id=1.9">Start new ideas →</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="section-details">
+    <section class="tiles-section">
       <h2>Already live</h2>
-      <p class="note">These charts are already live and should be used as the baseline for new ideas and decisions.</p>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>1.1 Hourly Call Distribution</h3>
-          <p>When agents dial and connect during the day, shown as an IST bar chart.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.2 City-Wise Distribution</h3>
-          <p>Geography × disposition stacked bars to show where calls are happening and how they convert.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.3 Top Numbers by Volume</h3>
-          <p>Most-dialled phone numbers with tag and average talk time for each.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.4 High-Touch Contacts (5+)</h3>
-          <p>Call count vs talk time to flag high-effort contacts with no result yet.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.5 Connected vs Unanswered</h3>
-          <p>Team connect rate shown as a KPI strip, comparing connections against unanswered attempts.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.6 Runo Log-Only Gaps</h3>
-          <p>Data completeness check for dials missed by webhook integration.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.7 Call Duration Distribution</h3>
-          <p>Short, medium, and long call breakdown for quality and efficiency analysis.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.8 Agent Compare (4-way)</h3>
-          <p>Side-by-side comparison for up to four agents on the same chart.</p>
-        </article>
-      </div>
+      <p class="note">Baseline charts — click any tile to open its detail page with preview.</p>
+      <div id="grid-live" class="grid-3x3"></div>
     </section>
 
-    <section class="section-details">
-      <h2>New ideas</h2>
-      <p class="note">Each new idea includes the question, insight, manager action, and a meeting decision state.</p>
-      <div class="chart-list">
-        <article class="chart-card">
-          <h3>1.9 Monthly Dial → Connect → Prospect Funnel</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> How many dials turned into connects and prospects each month?</p>
-          <p><strong>Insight:</strong> Three-bar grouped monthly visualization highlights volume vs quality.</p>
-          <p><strong>Manager action:</strong> Investigate flat connects with dropping prospects or rising prospect rates from better lists.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.11 Golden Hour Heatmap</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Which hour and weekday have the best connect rate?</p>
-          <p><strong>Insight:</strong> Hour × weekday colour grid surfaces the highest-performing call windows.</p>
-          <p><strong>Manager action:</strong> Reserve peak dialing hours and block admin tasks then.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.12 Number List Decay Chart</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> When does a lead batch stop working?</p>
-          <p><strong>Insight:</strong> Weekly junk% and unanswered% by batch reveal stale lists.</p>
-          <p><strong>Manager action:</strong> Retire batches crossing 40% junk by week three.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.13 Speed-to-First-Dial Report</h3>
-          <p><strong>Cadence:</strong> Daily · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> How quickly does each agent dial a new lead?</p>
-          <p><strong>Insight:</strong> First dial within 5 minutes converts much better.</p>
-          <p><strong>Manager action:</strong> Flag leads undialled for 30+ minutes and set a 15-minute standard.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.14 First Call vs Repeat Attempt Connect Rate</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Do we connect better on the first call or later attempts?</p>
-          <p><strong>Insight:</strong> Connect rates by attempt identify when to stop dialing.</p>
-          <p><strong>Manager action:</strong> Limit retries and move stale numbers to alternative channels.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.15 Live Daily Target Progress</h3>
-          <p><strong>Cadence:</strong> Daily · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Are agents on pace to hit today’s dial targets?</p>
-          <p><strong>Insight:</strong> Real-time progress bars show projected end-of-day performance.</p>
-          <p><strong>Manager action:</strong> Intervene early for agents below 40% by midday.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.16 Day-of-Week Performance Trend</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Are some weekdays consistently weaker?</p>
-          <p><strong>Insight:</strong> Dials and connect rate by weekday show energy gaps.</p>
-          <p><strong>Manager action:</strong> Use day-specific coaching and incentives.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.17 Redial Gap Tracker</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Are agents redialling too fast or too slow?</p>
-          <p><strong>Insight:</strong> Average gap between attempts identifies spammy behavior.</p>
-          <p><strong>Manager action:</strong> Set a minimum 4-hour redial gap.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.18 City × Time-of-Day Win Map</h3>
-          <p><strong>Cadence:</strong> Monthly · <strong>Complexity:</strong> Medium</p>
-          <p><strong>Question:</strong> Do cities respond at different times?</p>
-          <p><strong>Insight:</strong> City × hour connect rate heatmap surfaces local rhythms.</p>
-          <p><strong>Manager action:</strong> Create city-specific calling windows.</p>
-        </article>
-        <article class="chart-card">
-          <h3>1.19 Agent Effort Breakdown Donut</h3>
-          <p><strong>Cadence:</strong> Weekly · <strong>Complexity:</strong> Low</p>
-          <p><strong>Question:</strong> Where are agents spending their dials?</p>
-          <p><strong>Insight:</strong> Disposition buckets reveal high Unknown or dead-number effort.</p>
-          <p><strong>Manager action:</strong> Fix data before coaching agents with high Unknown rates.</p>
-        </article>
-      </div>
+    <section class="tiles-section">
+      <h2>New ideas — meeting decisions</h2>
+      <p class="note">Built from RunoTrackingEvent and SalesAgentDaySnapshot. Open each card, review the chart, tick your decision.</p>
+      <div id="grid-new" class="grid-3x3"></div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p><a href="index.html">Back to overview</a></p>
+      <p><a href="index.html">Back to overview</a> · <a href="section2.html">Section 2 →</a></p>
     </div>
   </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/decisions.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
